@@ -1,0 +1,43 @@
+{
+    /* 
+    1.使用openocd调试器调试stm32f429开发板的配置文件，需要安装cortex-debug插件
+    2.调试器会自动调用cmake构建任务，构建完成后会自动下载程序到开发板上，并在main函数入口点停止
+    3.注意：需要在系统环境变量中添加openocd的路径，或者在cortex-debug插件的设置中指定openocd的路径，否则会导致调试器无法找到openocd命令
+    4.使用cmsis-dap调试器 
+    */
+    "version": "0.2.0",
+    "configurations": [
+        {
+            //当前工作目录
+            "cwd": "${workspaceFolder}",
+            //项目生成可执行文件
+            "executable": "./build/Debug/${workspaceFolderBasename}.elf", 
+            "name": "Debug with OpenOCD",
+            "request": "launch",
+            /* cppdbg = 调试电脑上跑的 C/C++ 程序
+            cortex‑debug = 调试 STM32 这类 Cortex‑M 单片机（带硬件烧录 + 寄存器查看） */
+            "type": "cortex-debug",
+            //后端用 OpenOCD 调试服务器,可选"jlink"、"stlink"、"pyocd" 等
+            "servertype": "openocd",
+            //openocd调试的配置文件，调试器接口配置和目标芯片配置
+            "configFiles": [
+                "interface/cmsis-dap.cfg",		
+                "target/stm32f4x.cfg"
+            ],
+            //svd文件  System View Description 文件，提供寄存器的描述信息，可以在调试器中查看寄存器的值和含义
+            // stm32f429的svd文件可以从ST官网或者其他开源项目中获取
+            "svdFile": "./STM32F429.svd",
+            //配置文件搜索路径,openocd.cfg文件中可能会包含其他配置文件，这些文件的路径需要添加到searchDir中，否则openocd无法找到这些文件
+            "searchDir": [],
+            //main函数入口点停止
+            "runToEntryPoint": "main",
+            //调试输出级别，none表示不输出调试信息，可以根据需要调整为其他级别，如info、warn、error等
+            "showDevDebugOutput": "none",
+            //执行cmake构建任务
+            "preLaunchTask": "CMake: Build",
+            //调试服务器的参数，-d3表示调试级别为3，可以输出更多的调试信息，方便排查问题
+            // "serverArgs": ["-d3"]
+        },
+        
+    ]
+}

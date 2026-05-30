@@ -1,0 +1,72 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CMake: Configure",
+            "type": "shell",
+            "command": "cube-cmake",
+            "args": [
+                "-B",
+                "${workspaceFolder}/build",
+                "-G",
+                "Ninja",
+                "-DCMAKE_TOOLCHAIN_FILE=${workspaceFolder}/cmake/gcc-arm-none-eabi.cmake",
+                "-DCMAKE_BUILD_TYPE=Debug"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        },
+        {
+            "label": "CMake: Build",
+            "type": "shell",
+            "command": "cube-cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build/Debug",
+                "--config",
+                "Debug"
+            ],
+            "group": "build",
+            "dependsOn": [
+                "CMake: Configure"
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "OpenOCD: Flash Download",
+            "type": "shell",
+            "command": "D:\\Program Files\\Microsoft VS Code\\openocd v0.12.0\\bin\\openocd.exe",
+            "args": [
+                "-f",
+                "interface/cmsis-dap.cfg",
+                "-f",
+                "target/stm32f4x.cfg",
+                "-c",
+                "program build/Debug/${workspaceFolderBasename}.elf verify reset exit"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "dependsOn": [
+                "CMake: Build"
+            ],
+            "problemMatcher": []
+        },
+
+        {
+            "label": "CMake: Clean",
+            "type": "shell",
+            "command": "cube-cmake",
+            "args": [
+                "--build",
+                "${workspaceFolder}/build/Debug",
+                "--target",
+                "clean"
+            ],
+            "group": "build",
+            "problemMatcher": []
+        }
+       
+    ]
+}

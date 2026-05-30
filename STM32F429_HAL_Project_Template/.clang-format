@@ -1,0 +1,32 @@
+# .clang-format
+# 对这份配置的详细解读可参考这个示例: https://archive.softwareheritage.org/browse/content/sha1_git:33650ad303a1bbc450afd327c90e04ce9f83b62c/
+
+# 基础风格
+BasedOnStyle: LLVM
+
+# --- 对齐设置 ---
+AlignAfterOpenBracket: Align        # 括号后的参数对齐
+AlignConsecutiveAssignments: false  # 连续赋值语句对齐
+AlignOperands: true                 # 操作数对齐
+AlignTrailingComments: true         # 尾随注释对齐
+AlignConsecutiveDeclarations: false # 不连续声明对齐
+PointerAlignment: Left              # 指针对齐方式，左对齐
+
+AlignConsecutiveMacros: Consecutive # 连续宏定义对齐
+
+# --- 短语句设置 (全部禁止) ---
+AllowShortBlocksOnASingleLine: false
+AllowShortCaseLabelsOnASingleLine: false
+AllowShortFunctionsOnASingleLine: false
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+
+# --- 换行与括号设置 ---
+AlwaysBreakAfterReturnType: None                    # 返回类型后不强制换行
+AlwaysBreakBeforeMultilineStrings: true             # 多行字符串前强制换行
+AlwaysBreakTemplateDeclarations: true               # 模板声明后强制换行
+BreakBeforeBraces: Allman                           # **核心：Allman 大括号风格**
+BreakBeforeTernaryOperators: true                   # 三元运算符前换行
+BreakConstructorInitializersBeforeComma: true       # 构造函数的初始化列表在逗号前换行
+ColumnLimit: 120                                    # 列数限制，超过则换行
+ConstructorInitializerAllOnOneLineOrOnePerLine: true # 初始化列表尽可能在一行，否则每个单独一行

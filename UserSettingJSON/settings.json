@@ -1,0 +1,59 @@
+{
+    "cortex-debug.gdbPath": "C:\\Users\\ASUS\\AppData\\Local\\stm32cube\\bundles\\gnu-gdb-for-stm32\\14.3.1+st.2\\bin\\arm-none-eabi-gdb.exe",
+    "cortex-debug.openocdPath": "D:\\Program Files\\Microsoft VS Code\\openocd v0.12.0\\bin\\openocd.exe",
+    "cmake.environment": {
+        "PATH": "c:/Users/ASUS/.vscode/extensions/stmicroelectronics.stm32cube-ide-build-cmake-1.45.0-win32-x64/resources/cube-cmake/win32/x86_64;c:\\Users\\ASUS\\.vscode\\extensions\\stmicroelectronics.stm32cube-ide-core-1.3.0-win32-x64\\resources\\binaries\\win32\\x86_64;${env.PATH}"
+    },
+    "debug.allowBreakpointsEverywhere": true,
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 300000,
+    "github.copilot.chat.languageContext.typescript.items": "minimal",
+    "editor.defaultFormatter": "STMicroelectronics.stm32cube-ide-clangd",
+    "editor.formatOnType": true,
+    "stm32cube-ide-build-cmake.ignoreCubeProjectDiscovery": false,
+    "stm32cube-ide-debug-core.device-manager.StlinkConnectionErrorNotification": false,
+    "chat.viewSessions.orientation": "stacked",
+    "VsCodeTaskButtons.tasks": 
+        [
+            {
+                "label": "Configure",
+                "alignment": "left",
+                "task": "CMake: Configure",
+                //   "tasks": "",
+                "tooltip": "配置 CMake",
+                "description": "A description of the task when viewing the task list in the Quick Pick Menu",
+                "color": "default"
+            },
+
+            {
+                "label": "Build",
+                "alignment": "left",
+                "task": "CMake: Build",
+                "tasks": [],
+                "tooltip": "生成项目",
+                "description": "A description of the task when viewing the task list in the Quick Pick Menu",
+                "color": "default"
+            },
+
+            {
+                "label": "Flash Download",
+                "alignment": "left",
+                "task": "OpenOCD: Flash Download",
+                "tasks": [],
+                "tooltip": "烧录程序",
+                "description": "A description of the task when viewing the task list in the Quick Pick Menu",
+                "color": "default"
+            },
+
+            {
+                "label": "Clean",
+                "alignment": "left",
+                "task": "CMake: Clean",
+                "tasks": [],
+                "tooltip": "清理生成文件",
+                "description": "A description of the task when viewing the task list in the Quick Pick Menu",
+                "color": "default"
+            }
+        ]
+}

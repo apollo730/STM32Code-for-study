@@ -39,6 +39,7 @@
 ### 2\. 关键资源文件夹
 
 - **UserSettingJSON**：用户全局配置文件夹，存放 **settings\.json**，统一管理工程环境参数。
+- **STM32.code-profile**:vscode开发环境的配置文件
 
 ### 3\. BSP 板级支持文件夹
 

@@ -12,5 +12,48 @@
         "--query-driver=${env:CUBE_BUNDLE_PATH}/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-gcc*",
         "--query-driver=${env:CUBE_BUNDLE_PATH}/gnu-tools-for-stm32/14.3.1+st.2/bin/arm-none-eabi-g++*"
     ],
-    
+    "VsCodeTaskButtons.tasks": 
+        [
+            {
+                "label": "Configure",
+                "alignment": "left",
+                "task": "CMake: Configure",
+                //   "tasks": "",
+                "tooltip": "配置 CMake",
+                "description": "A description of the task when viewing the task list in the Quick Pick Menu",
+                "color": "default"
+            },
+
+            {
+                "label": "Build",
+                "alignment": "left",
+                "task": "CMake: Build",
+                "tasks": [],
+                "tooltip": "生成项目",
+                "description": "A description of the task when viewing the task list in the Quick Pick Menu",
+                "color": "default"
+            },
+
+            {
+                "label": "Flash Download",
+                "alignment": "left",
+                "task": "OpenOCD: Flash Download",
+                "tasks": [],
+                "tooltip": "烧录程序",
+                "description": "A description of the task when viewing the task list in the Quick Pick Menu",
+                "color": "default"
+            },
+
+            {
+                "label": "Clean",
+                "alignment": "left",
+                "task": "CMake: Clean",
+                "tasks": [],
+                "tooltip": "清理生成文件",
+                "description": "A description of the task when viewing the task list in the Quick Pick Menu",
+                "color": "default"
+            },
+
+
+        ],    
 }

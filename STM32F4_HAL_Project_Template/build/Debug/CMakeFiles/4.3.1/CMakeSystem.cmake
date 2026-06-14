@@ -3,7 +3,7 @@ set(CMAKE_HOST_SYSTEM_NAME "Windows")
 set(CMAKE_HOST_SYSTEM_VERSION "10.0.26200")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "AMD64")
 
-include("D:/CodeGitManage/STM32HAL_Projects/03_UART/cmake/gcc-arm-none-eabi.cmake")
+include("D:/CodeGitManage/STM32HAL_Projects/Project_Template/STM32F4_HAL_Project_Template/cmake/gcc-arm-none-eabi.cmake")
 
 set(CMAKE_SYSTEM "Generic")
 set(CMAKE_SYSTEM_NAME "Generic")

@@ -62,7 +62,7 @@ rule C_COMPILER__STM32_Drivers_unscanned_Debug
 # Rule for re-running cmake.
 
 rule RERUN_CMAKE
-  command = C:\Users\ASUS\AppData\Local\stm32cube\bundles\cmake\4.3.1+st.1\bin\cmake.exe --regenerate-during-build -SD:\CodeGitManage\STM32HAL_Projects\03_UART -BD:\CodeGitManage\STM32HAL_Projects\03_UART\build\Debug
+  command = C:\Users\ASUS\AppData\Local\stm32cube\bundles\cmake\4.3.1+st.1\bin\cmake.exe --regenerate-during-build -SD:\CodeGitManage\STM32HAL_Projects\Project_Template\STM32F4_HAL_Project_Template -BD:\CodeGitManage\STM32HAL_Projects\Project_Template\STM32F4_HAL_Project_Template\build\Debug
   description = Re-running CMake...
   generator = 1
 
